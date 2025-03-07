@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .success-message {
+            background-color: #b9e2dc;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Ensure position for tick animation */
+            overflow: hidden; /* Hide overflowing tick */
+        }
+
+        .tick-mark {
+            font-size: 48px;
+            margin-bottom: 20px;
+            position: absolute; /* Position tick relative to its container */
+            left: -100px; /* Start off-screen */
+            animation: tickMove 2s forwards; /* Animation name and duration */
+        }
+
+        @keyframes tickMove {
+            0% {
+                transform: translateX(-100px); /* Start off-screen */
+            }
+            100% {
+                transform: translateX(0); /* Move to original position */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-message">
+        <dotlottie-player src="https://lottie.host/23a92461-f0d3-481a-a381-0573b6619244/5SePYMG26g.json" background="transparent" speed="1" style="width: 400px; height: 300px;" loop autoplay></dotlottie-player>
+        <h1>Submitted Successfully!</h1>
+        <p>Thank you for your submission.</p>
+        <audio id="success-sound" autoplay>
+            <source src="success-sound.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <p><a href="Home.html">Back to Form</a></p>
+    </div>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+</body>
+</html>

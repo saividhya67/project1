@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Locations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .location {
+            margin: 20px;
+            position: relative;
+            width: 250px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .location img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .location:hover img {
+            transform: scale(1.1);
+        }
+
+        .location h3 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            margin: 0;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Delivery Locations</h1>
+    <div class="container">
+        <div class="location">
+            <a href="Home.html"><img src="https://w0.peakpx.com/wallpaper/327/605/HD-wallpaper-charminar-hyderabad-place-india.jpg"></a>
+            <h3>Hyderabad</h3>
+        </div>
+        <div class="location">
+            <a href="Home.html"><img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res40/97000/97573-Bengaluru-And-Vicinity.jpg" alt="Location 2"></a>
+            <h3>Bengaluru</h3>
+        </div>
+        <div class="location">
+            <a href="Home.html"><img src="https://t3.ftcdn.net/jpg/03/53/88/00/360_F_353880096_P0nqJ3vtq9tF14KvJ2TgLgxiQprAKUra.jpg"></a>
+            <h3>Pune</h3>
+        </div>
+        <div class="location">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/poster/b/t/p/eurekadesigns-poster-red-fort-delhi-lal-quila-edplaces967-large-original-imaefba49bfjhe9v.jpeg?q=90&crop=false"></a>
+            <h3>Delhi</h3>
+        </div>
+        <div class="location">
+            <a href="Home.html"><img src="https://i.pinimg.com/originals/45/1d/f6/451df6f064fd7d7e6abf458246bf0e80.jpg"></a>
+            <h3>Mumbai</h3>
+        </div>
+        <div class="location">
+            <a href="Home.html"><img src="https://media.istockphoto.com/id/1190475811/photo/rush-in-the-city.jpg?s=612x612&w=0&k=20&c=PKpWSnamJ8tjwCcRE1xFnc8n14Pv0u3ahDzNFuGIPa4="></a>
+            <h3>Kolkata</h3>
+        </div>
+        <div class="location">
+            <a href="Home.html"><img src="https://www.fabhotels.com/blog/wp-content/uploads/2023/01/Valluvar-Kottam-min.jpg"></a>
+            <h3>Chennai</h3>
+        </div>
+        <div class="location">
+            <a href="Home.html"><img src="https://www.fabhotels.com/blog/wp-content/uploads/2022/09/Patrika-Gate-1-min.jpg">
+            <h3>Jaipur</h3>
+        </div>
+        
+    </div>
+</body>
+</html>

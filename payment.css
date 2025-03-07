@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: #f0f0f0; /* Added background color for clarity */
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-image: linear-gradient(to right top, #111112, #12121a);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    background-color: #cb784b;
+    border-radius: 90px 80px 0 0;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.text {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.centre-content {
+    background-image: linear-gradient(to right, #5b1cee, #226ed7);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.price {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.course {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.last-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pay-now-btn {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #a0d4d4;
+    border: none;
+    padding: 20px 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.card-details {
+    background-color: #151616;
+    color: #e1dfe9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card-details p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.input-field input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.submit-now-btn {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #474ee3;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: calc(100% - 20px);
+    font-size: 16px;
+    margin-top: 10px;
+}

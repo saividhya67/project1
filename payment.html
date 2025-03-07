@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address and Payment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://previews.123rf.com/images/279photo/279photo1612/279photo161205274/68221978-payment-terminal-with-card-on-white-background-top-view.jpg");
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: transparent;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 40px;
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .payment-info {
+            display: none;
+        }
+
+        .payment-images img {
+            width: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Address Details and Payment Options</h1>
+        <form id="payment-form">
+            <h2>Address Details</h2>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+
+            <h2>Payment Options</h2>
+            <div class="form-group">
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="google-pay">Google Pay</option>
+                    <option value="phonepe">PhonePe</option>
+                </select>
+            </div>
+
+            <div class="payment-images">
+                <img id="credit-card-image" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="display:none;">
+                <img id="paypal-image" src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="display:none;">
+                <img id="google-pay-image" src="https://png.pngtree.com/png-clipart/20230916/original/pngtree-google-pay-payment-icon-vector-png-image_12256719.png" alt="Google Pay" style="display:none;">
+                <img id="phonepe-image" src="https://w7.pngwing.com/pngs/345/591/png-transparent-phonepe-hd-logo.png" alt="PhonePe" style="display:none;">
+            </div>
+
+            <div id="credit-card-info" class="payment-info">
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number">
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv">
+                </div>
+            </div>
+
+            <div id="paypal-info" class="payment-info">
+                <div class="form-group">
+                    <label for="paypal-email">PayPal Email:</label>
+                    <input type="email" id="paypal-email" name="paypal-email">
+                </div>
+            </div>
+
+            <div id="google-pay-info" class="payment-info">
+                <div class="form-group">
+                    <label for="google-pay-number">Google Pay Number:</label>
+                    <input type="text" id="google-pay-number" name="google-pay-number">
+                </div>
+            </div>
+
+            <div id="phonepe-info" class="payment-info">
+                <div class="form-group">
+                    <label for="phonepe-number">PhonePe Number:</label>
+                    <input type="text" id="phonepe-number" name="phonepe-number">
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('payment-method').addEventListener('change', function() {
+            let paymentMethod = this.value;
+
+            document.querySelectorAll('.payment-info').forEach(function(div) {
+                div.style.display = 'none';
+            });
+
+            document.querySelectorAll('.payment-images img').forEach(function(img) {
+                img.style.display = 'none';
+            });
+
+            if (paymentMethod === 'credit-card') {
+                document.getElementById('credit-card-info').style.display = 'block';
+                document.getElementById('credit-card-image').style.display = 'block';
+            } else if (paymentMethod === 'paypal') {
+                document.getElementById('paypal-info').style.display = 'block';
+                document.getElementById('paypal-image').style.display = 'block';
+            } else if (paymentMethod === 'google-pay') {
+                document.getElementById('google-pay-info').style.display = 'block';
+                document.getElementById('google-pay-image').style.display = 'block';
+            } else if (paymentMethod === 'phonepe') {
+                document.getElementById('phonepe-info').style.display = 'block';
+                document.getElementById('phonepe-image').style.display = 'block';
+            }
+        });
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById('name').value;
+            let address = document.getElementById('address').value;
+            let city = document.getElementById('city').value;
+            let state = document.getElementById('state').value;
+            let zip = document.getElementById('zip').value;
+            let paymentMethod = document.getElementById('payment-method').value;
+
+            let cardNumber = document.getElementById('card-number').value;
+            let expiryDate = document.getElementById('expiry-date').value;
+            let cvv = document.getElementById('cvv').value;
+
+            let paypalEmail = document.getElementById('paypal-email').value;
+
+            let googlePayNumber = document.getElementById('google-pay-number').value;
+
+            let phonePeNumber = document.getElementById('phonepe-number').value;
+
+            if (!name || !address || !city || !state || !zip || !paymentMethod) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+
+            if (!/^\d{6}$/.test(zip)) {
+                alert('Please enter a valid 6-digit zip code.');
+                return;
+            }
+
+            if (paymentMethod === 'credit-card' && (!cardNumber || !expiryDate || !cvv)) {
+                alert('Please fill out all credit card details.');
+                return;
+            }
+
+            if (paymentMethod === 'paypal') {
+                if (!paypalEmail) {
+                    alert('Please fill out your PayPal email.');
+                    return;
+                }
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(paypalEmail)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+            }
+
+            if (paymentMethod === 'google-pay' && !googlePayNumber) {
+                alert('Please fill out your Google Pay number.');
+                return;
+            }
+
+            if (paymentMethod === 'phonepe' && !phonePeNumber) {
+                alert('Please fill out your PhonePe number.');
+                return;
+            }
+
+            window.location.href = 'success.html';
+        });
+    </script>
+</body>
+</html>

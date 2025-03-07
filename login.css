@@ -1,0 +1,98 @@
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for readability */
+}
+
+.login-container {
+    padding: 20px;
+    margin-top:200px;
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    position: relative;
+    width: 100%; /* Ensure the input container takes the full width */
+    margin-bottom: 20px;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+input[type="email"], input[type="password"] {
+    padding: 10px 10px 10px 40px; /* Adjust padding to make room for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Ensure the input field takes the full width */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+input[type="password"] {
+    padding: 10px 10px 10px 40px; /* Adjust padding to make room for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Ensure the input field takes the full width */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+
+button[type="submit"],
+button.google-login {
+    background-color: #ff1493; /* Set the button to thick pink */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Ensure the buttons take the full width */
+    margin-bottom: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #d01378; /* Darker shade of pink for hover */
+}
+
+.or {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.or span {
+    font-size: 14px;
+    color: #666;
+}
+
+button.google-login {
+    background-color: #4285F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button.google-login:hover {
+    background-color: #357ae8;
+}
+
+button.google-login i {
+    font-size: 16px;
+}
